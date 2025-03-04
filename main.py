@@ -1,5 +1,5 @@
 gold = []
-invintory = []
+invintory = ["nothing"]
 while True:
     user_name = input("please enter your username ").strip().lower()
     print(f"hello {user_name}")
@@ -32,10 +32,16 @@ while True:
 while True:
     choice = input("do you take the rusty dagger? [yes/no] ")
     if choice == "yes":
+        print("you pick up the rusty dagger as you hear the people running are getting scarly close to you")
         print("DAGGER HAS BEEN ADDED TO YOUR INVINTORY")
+        invintory.remove("nothing")
         invintory.append("dagger")
         break
     if choice == "no":
         print("you leave the dagger on the floor as your hear the people running get closer and closer")
         break
 
+
+if dagger in invintory:
+    while True:
+        break

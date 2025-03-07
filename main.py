@@ -1,10 +1,12 @@
 gold = []
-invintory = ["nothing"]
+inventory = ["nothing"]
+import weapons
+
 while True:
     user_name = input("please enter your username ").strip().lower()
     print(f"hello {user_name}")
 
-    print("please note this game has no checkpoints at this momant in time so if you exit the game you will lose everything altho if you die you will respon close to where you died")
+    print("please note this game has no checkpoints at this moment in time. If you exit the game, you will lose everything. However, if you die, you will respawn close to where you died.")
     choice = input("are you ready to start? [yes/no] ")
     if choice == "yes":
         break
@@ -14,34 +16,38 @@ while True:
         exit()
 
 while True:
-    choice = input("you wake up in a cave with your arms chaned to two torches what do you do [break the chanes/wait] ")
-    if choice == "break the chanes":
-        print("you break out of the chanes with ease and notice a rusty small dagger to your left and you hear running footsteps on your right")
+    choice = input("you wake up in a cave with your arms chained to two torches. What do you do? [break the chains/wait] ")
+    if choice == "break the chains":
+        print("You break out of the chains with ease and notice a rusty small dagger to your left. You hear running footsteps on your right.")
         break
 
     if choice == "wait":
-        print("as you wait you hear footsteps getting closer and closer and as they enter you see... nothing but before anythig else everything goes black and you fall dead")
-        
-        choice = input("would you like to try again? [yes/no] ")
-    if choice == "yes":
-        pass
-    
-    if choice == "no":
-        exit()
+        print("As you wait, you hear footsteps getting closer and closer. Suddenly, everything goes black and you fall dead.")
+        choice = input("Would you like to try again? [yes/no] ")
+        if choice == "yes":
+            continue
+        if choice == "no":
+            exit()
 
 while True:
-    choice = input("do you take the rusty dagger? [yes/no] ")
+    choice = input("Do you take the rusty dagger? [yes/no] ")
     if choice == "yes":
-        print("you pick up the rusty dagger as you hear the people running are getting scarly close to you")
-        print("DAGGER HAS BEEN ADDED TO YOUR INVINTORY")
-        invintory.remove("nothing")
-        invintory.append("dagger")
+        print("You pick up the rusty dagger as you hear the people running are getting scarily close to you.")
+        print("RUSTY DAGGER HAS BEEN ADDED TO YOUR INVENTORY")
+        inventory.remove("nothing")
+        inventory.append(weapons.get_dagger())
         break
+
     if choice == "no":
-        print("you leave the dagger on the floor as your hear the people running get closer and closer")
+        print("You leave the dagger on the floor as you hear the people running get closer and closer.")
         break
 
-
-if dagger in invintory:
+if any(item.get("name") == "Rusty Dagger" for item in inventory):
     while True:
+        print("as you hold the dagger in your hand two men in black robes burst though the entrance")
+        choice = input("do you fight or run [fight/run]")
+        break
+else:
+    while True:
+        print("No dagger lol")
         break

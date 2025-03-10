@@ -16,7 +16,7 @@ while True:
         exit()
 
 while True:
-    choice = input("you wake up in a cave with your arms chained to two torches. What do you do? [break the chains/wait] ")
+    choice = input("you wake up in a cave with your arms chained to two torches. What do you do? [A) break the chains / B) wait] ")
     if choice == "break the chains":
         print("You break out of the chains with ease and notice a rusty small dagger to your left. You hear running footsteps on your right.")
         break
@@ -46,11 +46,15 @@ if any(item.get("name") == "Rusty Dagger" for item in inventory):
     while True:
         print("as you hold the dagger in your hand two men in black robes burst though the entrance")
         choice = input("do you fight or run [fight/run]")
-        use_item = input(f"what item would you like to use from your invintory? {inventory} ")
-        if user_name in inventory:
-            print(f"you take out your {use_item} and get ready to fight.")
+        if choice == "fight":
+            use_item = input(f"what item would you like to use from your invintory? {inventory} ")
+            if user_name in inventory:
+                print(f"you take out your {use_item} and get ready to fight.")
         break
 else:
     while True:
-        print("No dagger lol")
+        print("you see two men in black robes go though the main entrance")
+        choice = input("do you fight or run? [fight/run] ")
+        if choice == "fight":
+            print("you tighten your fist getting ready to fight ")
         break

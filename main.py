@@ -39,13 +39,16 @@ while True:
         break
 
     if choice == "no":
-        print("You leave the dagger on the floor as you hear the people running get closer and closer.")
+        print("You leave the dagger on the floor as you hear the people running getting closer and closer.")
         break
 
 if any(item.get("name") == "Rusty Dagger" for item in inventory):
     while True:
         print("as you hold the dagger in your hand two men in black robes burst though the entrance")
         choice = input("do you fight or run [fight/run]")
+        use_item = input(f"what item would you like to use from your invintory? {inventory} ")
+        if user_name in inventory:
+            print(f"you take out your {use_item} and get ready to fight.")
         break
 else:
     while True:
